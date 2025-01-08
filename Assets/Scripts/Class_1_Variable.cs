@@ -28,6 +28,14 @@ public class Class_1_Variable : MonoBehaviour
 
     public int coin=500;
     private int level=3;
+
+    /* 作業：宣告四個變數
+     * 1.價格，預設值 999，公開
+     * 2.跳躍高度，預設值 77.5，私人
+     * 3.武器，預設值為三項之力，公開
+     * 4.是否獲得龍魂，預設值為是，私人
+     */
+   
 }
 
 //類別外，不可將程式寫在這，例外：
