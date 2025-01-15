@@ -107,6 +107,26 @@ public class Class_3_Operator : MonoBehaviour
         Debug.Log(num3 <= num4);
         Debug.Log(num3 == num4); //等於
         Debug.Log(num3 != num4); //不等於
-        #endregion 
+        #endregion
+
+        #region 布林值邏輯運算子
+        Debug.Log("<color=#f93>--- 布林值邏輯運算子 ---</color>");
+        Debug.Log(!true);
+        Debug.Log(!false);
+        bool bool1 = true, bool2 = false;
+        Debug.Log (!bool1);
+        Debug.Log(!bool2);
+
+        Debug.Log("<color=#f93>--- and / or >> && / || ---</color>");
+        Debug.Log(true && true); //true
+        Debug.Log(true && false); //false
+        Debug.Log(false && true); //false
+        Debug.Log(false && false); //false
+
+        Debug.Log(true || true); //true
+        Debug.Log(true || false); //true
+        Debug.Log(false || true); //true
+        Debug.Log(false || false); //false
+        #endregion
     }
 }
