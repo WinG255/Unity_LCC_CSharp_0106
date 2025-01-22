@@ -23,6 +23,17 @@ public class Class_6_2_Array : MonoBehaviour
     //二維陣列
     public string[,] inventory = { {"紅水","藍水" },{"炸彈","金幣" }};
 
+    //三維陣列
+    public string[,,] shop =
+    {
+        { 
+            { "小刀", "美工刀" },{ "武士刀", "屠龍刀" } 
+        }, 
+        { 
+            { "精靈球", "高級球" },{ "大師球", "巢穴球" } 
+        } 
+    };
+
     private void Awake()
     {
         #region 一維陣列
@@ -48,5 +59,25 @@ public class Class_6_2_Array : MonoBehaviour
         inventory[1, 1] = "金創藥";
         Debug.Log($"<color=#3f3>編號[1,1]道具：{inventory[1, 1]}</color>");
         #endregion
+
+        #region 三維陣列
+        //存取三維陣列
+        //取得屠龍刀
+        Debug.Log($"<color=#f3d>第一頁第二排第二個：{shop[0,1,1]}</color>");
+        //設定高級球為起級球
+        shop[1, 0, 1] = "超級球";
+        Debug.Log($"<color=#f3d>第二頁第一排第二個：{shop[1, 0, 1]}</color>");
+        #endregion
+
+        //獲得陣列的長度或維度
+        //一維陣列的長度：陣列名稱.Length
+        Debug.Log($"<color=#f93>一維-牌組2的長度：{deck2.Length}</color>");
+        Debug.Log($"<color=#f93>二維-道具的長度：{inventory.Length}</color>");
+        Debug.Log($"<color=#f93>三維-商品的長度：{shop.Length}</color>");
+
+        //陣列的維度：陣列名稱.Rank
+        Debug.Log($"<color=#f93>一維-牌組2的維度：{deck2.Rank}</color>");
+        Debug.Log($"<color=#f93>二維-道具的維度：{inventory.Rank}</color>");
+        Debug.Log($"<color=#f93>三維-商品的維度：{shop.Rank}</color>");
     }
 }
