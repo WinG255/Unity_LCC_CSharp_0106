@@ -22,6 +22,7 @@ public class Class_6_2_Array : MonoBehaviour
 
     //二維陣列
     public string[,] inventory = { {"紅水","藍水" },{"炸彈","金幣" }};
+    //public string[][] temp = new string[2][] [[" "," " ],[" "," " ]];
 
     //三維陣列
     public string[,,] shop =
