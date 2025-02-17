@@ -20,10 +20,40 @@ public class Class_8_3_ClassAndStruct : MonoBehaviour
         LogSystem.LogWithColor(struct1.ToString(), "#f96");
         //LogSystem.LogWithColor(struct2.ToString(), "#f96");
     }
+
+    private void Start()
+    {
+        //var 不指定類別，可以儲存所有資料
+        var testClass = new  Class_8_4_Class ("我是類別");
+        var testStruct = new Class_8_4_Struct("我是結構");
+
+        var testClass2 = new Class_8_4_Class("我是類別2");
+        var testStruct2 = new Class_8_4_Struct("我是結構2");
+
+        LogSystem.LogWithColor(testClass.name , "#79f");
+        LogSystem.LogWithColor(testClass2.name, "#79f");
+        LogSystem.LogWithColor(testStruct.name, "#79f");
+        LogSystem.LogWithColor(testStruct2.name, "#79f");
+
+        testClass2 = testClass;  //傳址：這時候的class與class2指向同一個地址
+        testStruct2 = testStruct; //傳值：這時候的struct 與 struct2 指向同一個值
+
+        //修改 class 或 class2 資料都會被同步
+        testClass.name = "類別";
+        LogSystem.LogWithColor(testClass.name, "#79f");
+        LogSystem.LogWithColor(testClass2.name, "#79f");
+
+        //修改 struct 或 struct2 資料都會被同步
+        testStruct.name = "結構";
+        LogSystem.LogWithColor(testStruct.name, "#79f");
+        LogSystem.LogWithColor(testStruct2.name, "#79f");
+    }
 }
 /// <summary>
 /// 類別：
 /// 1.繼承：允許繼承
+/// 2.建構子：可以有多個建構子
+/// 4.資料類型：參考型別 Reference Type
 /// </summary>
 public class Class_8_3_Class : MonoBehaviour
 {
