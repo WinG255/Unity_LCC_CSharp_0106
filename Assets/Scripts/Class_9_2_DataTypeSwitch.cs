@@ -1,15 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using WinG.Tools;
 
 /// <summary>
-/// ¸ê®ÆÃş«¬Âà´«
+/// è³‡æ–™é¡å‹è½‰æ›
 /// </summary>
 public class Class_9_2_DataTypeSwitch : MonoBehaviour
 {
     private void Awake()
     {
-        //Áô¦¡Âà´«¡G¤£»İ­n¥t¥~«Å§iÂà´«Ãş«¬
-        //±N¤pªº¸ê®Æ©ñ¨ì¤jªº¸ê®Æ¤º
+        //éš±å¼è½‰æ›ï¼šä¸éœ€è¦å¦å¤–å®£å‘Šè½‰æ›é¡å‹
+        //å°‡å°çš„è³‡æ–™æ”¾åˆ°å¤§çš„è³‡æ–™å…§
         byte byte1 = 1;
         int int1=0;
 
@@ -17,33 +17,33 @@ public class Class_9_2_DataTypeSwitch : MonoBehaviour
         LogSystem.LogWithColor(byte1.GetType(), "#7f7");
         LogSystem.LogWithColor(int1, "#7f7");
         LogSystem.LogWithColor(int1.GetType(), "#7f7");
-        //Áô¦¡Âà´«¡G±N¤pªºbyte©ñ¨ì¤jªºint
+        //éš±å¼è½‰æ›ï¼šå°‡å°çš„byteæ”¾åˆ°å¤§çš„int
         int1 = byte1;
         LogSystem.LogWithColor(int1, "#7f7");
         LogSystem.LogWithColor(int1.GetType(), "#7f7");
 
-        //Åã¥ÜÂà´«¡G»İ­n«Å§iªºÂà´«Ãş«¬
-        //±N¤jªº¸ê®Æ©ñ¨ì¤pªº¸ê®Æ¤º
+        //é¡¯ç¤ºè½‰æ›ï¼šéœ€è¦å®£å‘Šçš„è½‰æ›é¡å‹
+        //å°‡å¤§çš„è³‡æ–™æ”¾åˆ°å°çš„è³‡æ–™å…§
         int int2 = 100;
         byte byte2 = 0;
         LogSystem.LogWithColor(byte2, "#7f7");
         LogSystem.LogWithColor(byte2.GetType(), "#7f7");
         LogSystem.LogWithColor(int2, "#7f7");
         LogSystem.LogWithColor(int2.GetType(), "#7f7");
-        //Åã¥ÜÂà´«¡G±N¤jªºint©ñ¨ì¤pªºbyte
-        //²K¥[(¸ê®ÆÃş«¬)
+        //é¡¯ç¤ºè½‰æ›ï¼šå°‡å¤§çš„intæ”¾åˆ°å°çš„byte
+        //æ·»åŠ (è³‡æ–™é¡å‹)
         byte2 = (byte)int2;
         LogSystem.LogWithColor(byte2, "#7f7");
         LogSystem.LogWithColor(byte2.GetType(), "#7f7");
 
-        //floatÂà¬°int¡A¤p¼ÆÂI·|¿ò¥¢
+        //floatè½‰ç‚ºintï¼Œå°æ•¸é»æœƒéºå¤±
         float float1 = 3.5f;
         byte byte3 = 0;
         byte3 = (byte)float1;
         LogSystem.LogWithColor(byte3, "#7f7");
         LogSystem.LogWithColor(byte3.GetType(), "#7f7");
 
-        //½d³ò¸û¤jªºÂà¬°½d³ò¸û¤pªº¡A·|¾É­P·¸¦ì(±qÀY¶}©l)
+        //ç¯„åœè¼ƒå¤§çš„è½‰ç‚ºç¯„åœè¼ƒå°çš„ï¼Œæœƒå°è‡´æº¢ä½(å¾é ­é–‹å§‹)
         int int3 = 256;
         byte byte4 = 0;
         byte4 = (byte)int3;
