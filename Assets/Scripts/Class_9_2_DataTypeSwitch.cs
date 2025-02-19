@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using WinG.Tools;
 
 /// <summary>
@@ -49,5 +50,27 @@ public class Class_9_2_DataTypeSwitch : MonoBehaviour
         byte4 = (byte)int3;
         LogSystem.LogWithColor(byte4, "#7f7");
         LogSystem.LogWithColor(byte4.GetType(), "#7f7");
+    }
+
+    private void Start()
+    {
+        //將整數轉為字串
+        int count = 99;
+        var intTostring = Convert.ToString(count);
+        LogSystem.LogWithColor(intTostring.GetType(), "#f96");
+        //將布林值轉為字串
+        bool isOver = false;
+        var boolToString = Convert.ToString(isOver );
+        LogSystem.LogWithColor(boolToString.GetType(),"#f96");
+
+        float move = 3.5f;
+        var floatToByte = Convert.ToByte(move);
+        LogSystem.LogWithColor(floatToByte.GetType(), "#f96");
+
+        //true = 1, false = 0
+        bool isGrounded = true;
+        var boolToByte = Convert.ToByte(isGrounded);
+        LogSystem.LogWithColor(floatToByte, "#f96");
+        LogSystem.LogWithColor(floatToByte.GetType(), "#f96");
     }
 }
