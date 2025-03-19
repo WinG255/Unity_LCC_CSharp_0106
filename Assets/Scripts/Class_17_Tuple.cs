@@ -24,6 +24,12 @@ public class Class_17_Tuple : MonoBehaviour
         UseCard(card1);
         UseCard(card2);
         UseCard(("暴龍",7,199));
+
+        var card1Update = UpdateCardCost(card1);
+        LogSystem.LogWithColor($"{card1Update.name} | " + $"消耗： {card1Update.cost}| 編號：{card1Update.index}", "#f49");
+
+        LogSystem.LogWithColor($"{card1Update == card1}", "#79f");
+        LogSystem.LogWithColor($"{card1Update != card1 }", "#79f");
     }
 
     /// <summary>
@@ -33,5 +39,15 @@ public class Class_17_Tuple : MonoBehaviour
     private void UseCard((string name, int cost, int index) card)
     {
         LogSystem.LogWithColor($"消耗 {card.cost} 使用卡牌：{card.name}", "#7f7");
+    }
+
+    /// <summary>
+    /// 降低卡牌消耗
+    /// </summary>
+    private (string name, int cost, int index) UpdateCardCost((string name,int cost, int index) card)
+    {
+        card.name = card.name + " 降低消耗版本";
+        card.cost -= 1;
+        return card;
     }
 }
