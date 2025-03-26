@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using WinG.Tools;
 using static UnityEditor.Progress;
@@ -11,9 +12,11 @@ public class Class_19_LinQ : MonoBehaviour
 {
 
     public int[] scores = { 90,88,76,68,92,59};
+    public string[] items = {"","" };
 
     private void Awake()
     {
+        #region LinQ基本用法
         //使用LinQ 的關鍵字查詢資料
         //起手式：
         //from 資料來源
@@ -40,16 +43,41 @@ public class Class_19_LinQ : MonoBehaviour
         //group by 
         var queryGroup = from score in scores group score by score % 2;
 
-        foreach(var group in queryGroup)
+        foreach (var group in queryGroup)
         {
             LogSystem.LogWithColor(group, "#f11");
 
-            foreach(var item in group)
+            foreach (var item in group)
             {
                 LogSystem.LogWithColor(item, "#79f");
             }
 
             LogSystem.LogWithColor("--------------------------------------------", "#79f");
         }
+        #endregion
+
+        var queryRed = from item in items
+                       lef firstWord = item[0]
+                        where firstWord == '紅'
+            select item;
+
+        foreach (var group in queryRed)
+        {
+            LogSystem.LogWithColor($"第一個字是紅到道具:{item}", "#fa3");
+        }
+
+        var queryRedGroup = from item in items
+                            group item by item[0] into newGroup
+                            select newGroup;
+
+        foreach (var group in queryRedGroup)
+        {
+            LogSystem.LogWithColor($"群組:{group.Key}", "#3f3");
+            foreach (var item in queryRedGroup)
+            {
+                LogSystem.LogWithColor($"道具:{item}", "#9f9");
+            }
+        }
     }
 }
+
